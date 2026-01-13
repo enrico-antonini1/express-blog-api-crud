@@ -4,12 +4,15 @@ import postRouter from "./routers/post.js";
 const app = express();
 const port = 3000;
 
+app.use(express.static("public"));
+app.use(express.json())
+
 // rotta di prova
 app.get("/", (req, res) => {
   res.send("Questa è una prova");
 });
 
-app.use(express.static("public"));
+
 app.use("/post", postRouter);
 
 app.listen(port, () => {

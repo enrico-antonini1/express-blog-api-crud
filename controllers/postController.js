@@ -10,13 +10,34 @@ function show(req,res) {
     res.json(actualPost)
 }
 
-function store(req,res) {}
+function store(req,res) {
+    const data = req.body;
 
-function update(req,res) {}
+    const newId = post[post.length-1].id + 1;
+    
+    const newPost = {
+        id: newId,
+        ...data,
+    }
 
-function modify(req,res) {}
+    post.push(newPost);
+    res.status(201);
+    res.json(newPost);
+}
 
-function destroy(req,res) {}
+function update(req,res) {
+    const id = parseInt(req.params.id)
+    const actualPost = post.find((p) => p.id === id)
+}
+
+function modify(req,res) {
+    
+}
+
+function destroy(req,res) {
+    const id = parseInt(req.params.id)
+    const actualPost = post.find((p) => p.id === id)
+}
 
 export default {
   index,
