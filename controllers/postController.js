@@ -43,6 +43,8 @@ function modify(req, res) {}
 function destroy(req, res) {
   const id = parseInt(req.params.id);
   const actualPost = post.find((p) => p.id === id);
+
+  post.splice(post.indexOf(actualPost), 1)
 }
 
 export default {
