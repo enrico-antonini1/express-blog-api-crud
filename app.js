@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
   res.send("Questa è una prova");
 });
 
+app.use(express.static("public"));
 app.use("/post", postRouter);
 
 app.listen(port, () => {
