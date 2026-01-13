@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start":"node app.js",
+    "dev":"node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
