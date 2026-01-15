@@ -27,15 +27,20 @@ function store(req, res) {
 
 function update(req, res) {
   const id = parseInt(req.params.id);
-  const actualPost = post.find((p) => p.id === id);
   const data = req.body;
 
-  actualPost.titolo = data.titolo;
-  actualPost.contenuto = data.contenuto;
-  actualPost.immagine = data.immagine;
-  actualPost.tags = data.tags;
+  const actualPost = post.find((p) => p.id === id);
 
-  res.json(actualPost)
+  const updatedPost = {  
+  titolo : data.titolo,
+  contenuto : data.contenuto,
+  immagine : data.immagine,
+  tags : data.tags,
+  }
+
+  post.splice(post.indexOf(actualPost), 1, updatedPost) 
+
+  res.json(updatedPost)
 }
 
 function modify(req, res) {}

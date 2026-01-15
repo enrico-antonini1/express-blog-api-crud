@@ -1,4 +1,4 @@
-const postData = [
+const post = [
     {
         id: 1,
         titolo: "Ciambellone",
@@ -36,4 +36,4 @@ const postData = [
     },
 ];
 
-export default postData
+export default post

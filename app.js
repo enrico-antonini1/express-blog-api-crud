@@ -1,5 +1,7 @@
 import express from "express";
 import postRouter from "./routers/post.js";
+import routeNotFound from "./middlewares/routeNotFound.js";
+import handleError from "./middlewares/handleError.js";
 
 const app = express();
 const port = 3000;
@@ -14,6 +16,10 @@ app.get("/", (req, res) => {
 
 
 app.use("/post", postRouter);
+
+app.use(routeNotFound)
+
+app.use(handleError)
 
 app.listen(port, () => {
   console.log(`In ascolto alla porta ${port}`);
